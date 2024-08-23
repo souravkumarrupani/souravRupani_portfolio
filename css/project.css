@@ -1,0 +1,475 @@
+/* ********************************************************************************************
+Start common css styling
+******************************************************************************************** */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary_color: #4caf50;
+    --Primary_text_color: #eee;
+    --secondary_text_color: #eeeeeedf;
+    scroll-behavior: smooth;
+}
+
+body{
+    background: #121212;
+    color: var(--Primary_text_color);
+    font-family: sans-serif;
+    overflow-x: hidden !important;
+    user-select: none;
+}
+
+.d-flex{
+    align-items: center;
+}
+
+.btn_effect{
+    width: 100%;
+    border: none;
+    background: var(--primary_color);
+    color: var(--Primary_text_color);
+    padding: 7px 10px;
+    box-shadow: 0px 0px 10px #4caf4fa8;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 3px;
+    position: relative;
+    overflow: hidden;
+    z-index: 9;
+    &::before{
+        content: " ";
+        display: block;
+        width: 15px;
+        aspect-ratio: 1/1;
+        position: absolute;
+        left: -5px;
+        bottom: -5px;
+        background: #147517;
+        border-radius: 100%;
+        z-index: -1;
+        transition: scale 0.5s;
+    }
+    &:hover::before{
+        scale: 30;
+    }
+    & i{
+        margin-right: 5px;
+        font-size: 15px;
+    }
+}
+
+a, ul, i{
+    text-decoration: none;
+    list-style: none;
+    color: inherit;
+    display: inline-block;
+}
+.h-100{
+    height: 100%;
+}
+
+button{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+}
+
+::-webkit-scrollbar{
+    width: 8px;
+}
+::-webkit-scrollbar-track{
+    color: #1212128e;
+}
+::-webkit-scrollbar-thumb{
+    background: #4caf4f38;
+    border-radius: 20px;
+}
+
+/* ********************************************************************************************
+Start header section styling
+******************************************************************************************** */
+header{
+
+    /* ****************** Start nav section styling ************** */
+    & nav{
+        width: 100%;
+        padding: 13px 0;
+        background: #121212;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 999;
+        box-shadow: 0px 0px 10px #02fa5d12;
+        overflow-x: hidden;
+
+        #brand_name{
+            font-family: serif;
+            font-size: 24px;
+        }
+
+        .btn_video_coll{
+            margin-left: 20px;
+        }
+
+        .desktop_manue li a{
+            font-size: 15px;
+            padding: 8px 15px;
+            margin-left: 15px;
+            position: relative;
+            &::before{
+                content: "";
+                display: block;
+                height: 0.2px;
+                width: 0;
+                position: absolute;
+                left: 15px;
+                bottom: 4px;
+                border-radius: 0 20px 20px 0px;
+                background: var(--primary_color);
+                transition: all 0.5s;
+            }
+            
+            &:hover::before{
+                width: 70%;
+            }
+
+            & i{
+                color: var(--primary_color);
+            }
+            
+        }
+
+        .mobile_manue{
+            display: none;
+        }
+        
+    }/*** End of nav styling ***/
+
+    /* ****************** Start nav section styling ************** */
+    .aside_bar{
+        position: fixed;
+        top: 55px;
+        left: -255px;
+        width: 250px;
+        height: 89vh;
+        z-index: 998;
+        background: var(--secondary_text_color);
+        color: #121212;
+        padding: 20px;
+        padding-right: 0;
+        overflow: hidden;
+
+        ul.manue_list{
+            height: 100%;
+            width: 100%;
+
+            & li{
+                margin-bottom: 27px;
+                & i{
+                    font-size: 24px;
+                }
+                .text{
+                    margin-left: 0px;
+                    padding: 10px;
+                    padding-top: 15px;
+                    font-weight: bold;
+                }
+                
+                & button{
+                    width: 100%;
+                    padding-left: 15px;
+                    border-top-left-radius: 20px;
+                    border-bottom-left-radius: 20px;
+                    
+                }
+
+                & button.active_btn{
+                    position: relative;
+                    color: var(--secondary_text_color);
+                    background: #121212;
+                    &::before, &::after{
+                        content: "";
+                        display: block;
+                        position: absolute;;
+                        background-color: #121212;
+                        width: 25px;
+                        height: 25px;
+                        border-top-left-radius: 100%;
+                    }
+                    &&::before{
+                        top: -4.5px;
+                        right: -8px;
+                    }
+                    &::after{
+                        bottom: -1px !important;
+                        right: -9px !important;
+                        rotate: -60deg;
+                    }
+
+                }
+            }
+            
+        }
+        
+    }
+    
+}
+
+
+/* ********************************************************************************************
+Start main section styling
+******************************************************************************************** */
+main{
+    margin-top: 80px;
+    min-height: 100vh;
+    width: 100%;
+
+    /* ****************** Start heading section styling ************** */
+    .aside_open_btn{
+        position: relative;
+        min-height: 50px;
+        & button{
+            color: var(--Primary_text_color);
+            font-size: 25px;
+            position: absolute;
+            top: 0;
+            right: 32px;
+        }
+    }/*** End of heading_section styling ***/
+
+    /* ************** Start project_box section styling ************** */
+    .project_box_section{
+        margin-top: 40px;
+        
+        .item{
+            width: 50% !important;
+        }
+        .box{
+            border-right: 1px solid #eeeeee82;
+            border-radius: 5px;
+            .text_box{
+                padding-left: 20px;
+                & button{
+                    color: var(--secondary_text_color);
+                    padding: 10px 20px;
+                    box-shadow: 0px 0px 15px #4caf4f38 inset;
+                    transition: all 0.5s;
+                    & i{
+                        font-size: 16px;
+                    }
+
+                    &:hover{
+                        background: var(--primary_color);
+                    }
+                    
+                }
+            }
+        }
+        
+    }
+    
+}
+
+
+
+/* ********************************************************************************************
+Start footer section styling
+******************************************************************************************** */
+footer{
+    display: none;
+    width: 100%;
+    padding: 30px 0;
+    margin-top: 40px;
+    background: #000;
+    
+    & ul a{
+        padding: 10px;
+        margin-right: 10px;
+        color: #eeeeee9d;
+        transition: all 0.5s;
+        &:hover{
+            color: var(--primary_color);
+            letter-spacing: 1px;
+        }
+    }
+    & p{
+        color: #eeeeee9d;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+
+    & button a{
+        color: #eeeeee9d;
+        padding: 10px;
+        font-size: 18px;
+        margin-right: 15px;
+        margin-bottom: 4px;
+    }
+
+    .box a{
+        color: #eeeeee9d;
+        font-size: 14px;
+        margin-right: 20px;
+    }
+
+    
+}
+
+
+
+/* ********************************************************************************************
+Start media querry styling
+******************************************************************************************** */
+/* Media querry screen size for blow 992px */
+@media all and (max-width: 992px){
+
+    main{
+        .project_box_section .row{
+            row-gap: 80px;
+        }
+        .project_box_section .item{
+            width: 100% !important;
+        }
+        
+    }
+}
+
+/* Media querry screen size for 0px to 678px */
+@media all and (max-width: 768px){
+
+    .container{
+        max-width: 100% !important;
+        min-width: 100%;
+        padding: 0 25px !important;
+    }
+
+    header{
+        nav{
+            overflow-x: hidden;
+            #brand_name{
+                font-size: 22px;
+            }
+
+            .desktop_manue{
+                display: none;
+            }
+
+            .mobile_manue{
+                display: block;
+                font-size: 14.9px;
+                #btn_hambars{
+                    color: var(--Primary_text_color);
+                    font-size: 22px !important;
+                    padding: 5px;
+                }
+
+                .manue_box{
+                    width: 240px;
+                    height: 95vh;
+                    background: #1212129f;
+                    backdrop-filter: blur(5px);
+                    position: fixed;
+                    top: 55px;
+                    right: -250px;
+                    padding: 20px;
+                    padding-top: 30px;
+
+                    & ul{
+                        display: block;
+                        width: 100%;
+                        & li a{
+                            padding: 10px 0;
+                            display: block;
+                            width: 100%;
+                            margin-bottom: 15px;
+                            display: flex;
+                            gap: 7px;
+                            &:hover{
+                                color: var(--primary_color);
+                            }
+                            
+                            & i{
+                                color: var(--primary_color);
+                            }
+                        }
+                    }
+
+                    .socal_media_box button{
+                        font-size: 18px;
+                        padding: 10px;
+                        color: var(--primary_color);
+                    }
+                }
+                
+            }
+            
+        }
+
+    }
+
+    footer .middle{
+        border: 0 !important;
+    }
+}
+
+/* Media querry screen size for blow 576px */
+@media all and (max-width: 500px){
+    
+    main{
+        .project_box_section .item .box{
+            flex-direction: column;
+            row-gap: 20px;
+            justify-content: start;
+            border: none;
+
+            & img{
+                width: 95%;
+                height: 450px;
+            }
+            
+            .text_box{
+                padding-left: 0 !important;
+                text-align: center;
+            }
+            
+        }
+    }
+
+}
+
+/* Media querry screen size for 769px to 1024px  */
+@media all and (min-width: 769px) and (max-width: 1024px){
+    .container{
+        max-width: 992px;
+        padding: 0 25px ;
+    }
+    
+    nav{
+        .desktop_manue a{
+            font-size: 13.5px;
+            padding: 8px 8px !important;
+            margin-left: 10px !important;
+        }
+    }
+
+}
+
+/* Media querry screen size for 1025px to 1441px  */
+@media all and (min-width: 1025px) and (max-width: 1441px){
+    .container{
+        max-width: 1400px;
+        padding: 0 35px;
+    }
+}
+
+/* Media querry screen size for 1442px to up  */
+@media all and (min-width: 1442px){
+    .container{
+        max-width: 1600px;
+        padding: 0 65px !important;
+    }
+}
